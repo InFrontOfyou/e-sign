@@ -1,1 +1,1 @@
-sender.exe sms.txt | recipient.exe sms.txt
+sender.exe %~1 | recipient.exe %~1
