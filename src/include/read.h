@@ -9,7 +9,7 @@
 
 #define READ_BUFF 1000
 
-_Static_assert(READ_BUFF > 0, "READ_BUFF cannot be less than or equal to zero");
+static_assert(READ_BUFF > 0, "READ_BUFF cannot be less than or equal to zero");
 
 ssize_t		read_text(int fd, char **dst);
 

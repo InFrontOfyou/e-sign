@@ -3,6 +3,7 @@
 #include "sha1.h"
 #include "rsa.h"
 #include "read.h"
+#include <cstdlib>
 
 int		main(int ac, char *av[])
 {
@@ -19,7 +20,7 @@ int		main(int ac, char *av[])
 
 	len = HASH_LEN / WORD_LEN + (HASH_LEN % WORD_LEN > 0);
 	t_ull nums[len];
-	bzero(nums, sizeof(t_ull) * len);
+	std::fill(nums, nums + len, 0);
 	for(int i = 0; i < HASH_LEN; ++i)
 		nums[i / WORD_LEN] |= hash[i] << ((WORD_LEN - 1 - (i % WORD_LEN)) * BITS_IN_BYTE);
 
@@ -27,7 +28,7 @@ int		main(int ac, char *av[])
 	t_ull q = 2579ull;
 	t_ull n = p * q;
 	t_ull coprime_nbr = (p - 1) * (q - 1);
-	t_ull public_key = 1007;
+	t_ull public_key = 1007ull;
 	t_ull private_key = mmi(coprime_nbr, public_key);
 	int i;
 	printf("%llu %llu\n", public_key, n);

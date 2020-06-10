@@ -14,7 +14,7 @@ int		main(int ac, char *av[])
 	}
 	char *str;
 	ssize_t len = read_text(0, &str);
-
+	write(1, str, len);
 	t_ull n = 0;
 	t_ull public_key = 0;
 
@@ -55,7 +55,7 @@ int		main(int ac, char *av[])
 	for (int i = 0; i < HASH_LEN; ++i)
 		printf("%02x ", hash_orig[i]);
 	printf("\n");
-	printf("%d\n", memcmp(hash, hash_orig, HASH_LEN));
+	
 
 
 	delete str;

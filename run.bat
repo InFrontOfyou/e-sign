@@ -1,0 +1,1 @@
+sender.exe sms.txt | recipient.exe sms.txt

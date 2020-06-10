@@ -1,5 +1,6 @@
 #ifndef _MATH_H_
 # define _MATH_H_
+#include "print.h"
 
 typedef unsigned long long int  t_ull;
 typedef long long int		   t_lli;

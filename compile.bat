@@ -1,0 +1,1 @@
+g++ src/%~1.cpp src/lib/math.cpp src/lib/print.cpp src/lib/read.cpp src/lib/rsa.cpp src/lib/sha1.cpp --std=c++11 -Isrc/include -o %~1.exe

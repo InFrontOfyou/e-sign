@@ -1,6 +1,6 @@
 SNDR		=	sender
 RCPNT		=	recipient
-OUTEXT		=	out
+OUTEXT		=	exe
 SRCEXT		=	cpp
 OBJEXT		=	o
 LIB			=	math.cpp	\
@@ -38,12 +38,12 @@ $(OBJDIR):
 
 clean:
 	@echo "Removing objects"
-	@rm -Rf $(OBJDIR)
+	@/s /q $(OBJDIR)
 
 fclean: clean
 	@echo "Removing outs"
-	@rm -Rf $(SNDR:%=%.$(OUTEXT))
-	@rm -Rf $(RCPNT:%=%.$(OUTEXT))
+	@/s /q $(SNDR:%=%.$(OUTEXT))
+	@/s /q $(RCPNT:%=%.$(OUTEXT))
 
 re: fclean all
 	
